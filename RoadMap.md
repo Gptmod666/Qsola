@@ -3,7 +3,7 @@
 ## 📦 Fichiers de données (réactivité en live)
 
 - [ ] `mainwallet.json` – stocke le wallet principal (live update)
-- [ ] `generatedwallet.json` – stocke jusqu’à 500 wallets générés (live update)
+- [ ] `generatedwallet.json` – stocke jusqu'à 500 wallets générés (live update)
 - [ ] Sauvegarde en temps réel via WebSocket Helius
 
 ---
@@ -20,7 +20,7 @@
 
 - [x] Import JSON → écrit dans `mainwallet.json`
 - [x] Export JSON
-- [ ] Delete wallet principal
+- [x] Delete wallet principal
 - [ ] Solde auto-mis à jour (via WebSocket Helius)
 - [ ] Affichage SOL + conversion USD (`number-format.service.ts`)
 - [ ] Pop Up de confiramation → `send-popup.tsx`
