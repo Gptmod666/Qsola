@@ -3,14 +3,14 @@ src/
 │   ├── delete-popup.tsx                     # Delete wallet confirmation
 │   ├── distributor.tsx                      # Placeholder distributor page
 │   ├── generator.tsx                        # Placeholder generator page
-│   ├── layout.tsx                           # Global layout with header
+│   ├── layout.tsx                           # Global layout (fonts, styles)
 │   ├── mainwallet.tsx                       # Placeholder main wallet page
 │   ├── page.tsx                             # Home page
 │   ├── pump.tsx                             # Placeholder pump page
 │   └── send-popup.tsx                       # Send funds popup
 │
 ├── components/
-│   └── header.tsx                           # Simple header component
+│   └── header.tsx                           # Header with app title and totals
 │
 ├── services/                                # Business logic and blockchain
 │   ├── pumpfun/                             # Pump.fun related services
