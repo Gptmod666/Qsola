@@ -1,14 +1,16 @@
 @echo off
-cd /d "C:\Users\ayads\Desktop\Qsola"
-
-echo ➕ Ajout des modifications...
+echo.
+echo 🔄 Ajout des modifications...
 git add .
 
-echo 📝 Commit...
-git commit -m "update"
+echo.
+echo ✅ Commit...
+git commit -m "force update"
 
-echo ⬆️ Push vers GitHub...
-git push
+echo.
+echo ⛔ Push forcé vers GitHub...
+git push origin main --force
 
-echo ✅ Projet mis à jour.
+echo.
+echo 🚀 Push terminé (force).
 pause

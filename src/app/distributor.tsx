@@ -1,1 +1,3 @@
-import '../styles/globals.css'
+export default function Distributor() {
+  return <div>Distributor</div>
+}

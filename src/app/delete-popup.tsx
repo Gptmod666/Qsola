@@ -1,1 +1,3 @@
-import '../styles/globals.css'
+export default function DeletePopup() {
+  return <div>Delete Popup</div>
+}
