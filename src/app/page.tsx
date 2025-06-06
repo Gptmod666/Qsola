@@ -5,43 +5,37 @@ import MainWallet from './mainwallet'
 import Generator from './generator'
 import Distributor from './distributor'
 import Pump from './pump'
+import Header from '@/components/header'
+import { Tabs, Tab } from "@heroui/react"
 
 export default function Page() {
-  const [tab, setTab] = useState('main')
+  const [selected, setSelected] = useState('main')
 
   return (
-    <main>
-      <div className="flex border-b">
-        <button 
-          onClick={() => setTab('main')}
-          className={`px-4 py-2 ${tab === 'main' ? 'border-b-2 border-blue-500' : ''}`}
+    <>
+      <Header />
+      <main className="container mx-auto px-4">
+        <Tabs 
+          selectedKey={selected} 
+          onSelectionChange={setSelected as any}
+          className="mt-4"
+          size="sm"
+          variant="underlined"
         >
-          Main Wallet
-        </button>
-        <button 
-          onClick={() => setTab('generator')}
-          className={`px-4 py-2 ${tab === 'generator' ? 'border-b-2 border-blue-500' : ''}`}
-        >
-          Generator
-        </button>
-        <button 
-          onClick={() => setTab('distributor')}
-          className={`px-4 py-2 ${tab === 'distributor' ? 'border-b-2 border-blue-500' : ''}`}
-        >
-          Distributor
-        </button>
-        <button 
-          onClick={() => setTab('pump')}
-          className={`px-4 py-2 ${tab === 'pump' ? 'border-b-2 border-blue-500' : ''}`}
-        >
-          Pump
-        </button>
-      </div>
-
-      {tab === 'main' && <MainWallet />}
-      {tab === 'generator' && <Generator />}
-      {tab === 'distributor' && <Distributor />}
-      {tab === 'pump' && <Pump />}
-    </main>
+          <Tab key="main" title="Main Wallet">
+            <MainWallet />
+          </Tab>
+          <Tab key="generator" title="Generator">
+            <Generator />
+          </Tab>
+          <Tab key="distributor" title="Distributor">
+            <Distributor />
+          </Tab>
+          <Tab key="pump" title="Pump">
+            <Pump />
+          </Tab>
+        </Tabs>
+      </main>
+    </>
   )
 }

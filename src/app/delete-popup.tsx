@@ -1,3 +1,5 @@
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button } from "@heroicons/react"
+
 interface Props {
   onConfirm: () => void
   onCancel: () => void
@@ -5,24 +7,21 @@ interface Props {
 
 export default function DeletePopup({ onConfirm, onCancel }: Props) {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black/50">
-      <div className="bg-white p-4 space-y-4 rounded shadow">
-        <p className="text-center">Delete wallet?</p>
-        <div className="flex justify-end space-x-2">
-          <button
-            onClick={onCancel}
-            className="px-4 py-2 bg-gray-200 rounded"
-          >
+    <Modal isOpen onClose={onCancel} size="sm">
+      <ModalContent>
+        <ModalHeader>Delete Wallet</ModalHeader>
+        <ModalBody>
+          <p>Are you sure you want to delete this wallet?</p>
+        </ModalBody>
+        <ModalFooter>
+          <Button color="default" variant="light" onPress={onCancel}>
             Cancel
-          </button>
-          <button
-            onClick={onConfirm}
-            className="px-4 py-2 bg-red-500 text-white rounded"
-          >
+          </Button>
+          <Button color="danger" onPress={onConfirm}>
             Delete
-          </button>
-        </div>
-      </div>
-    </div>
+          </Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
   )
 }
