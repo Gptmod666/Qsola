@@ -3,10 +3,16 @@
 import { useEffect, useState, ChangeEvent } from 'react'
 import { Keypair } from '@solana/web3.js'
 import { generateWallet } from '@/services/wallet/generator.service'
-import { loadMainWallet, saveMainWallet } from '@/services/wallet/main-wallet.service'
+import {
+  loadMainWallet,
+  saveMainWallet,
+  deleteMainWallet,
+} from '@/services/wallet/main-wallet.service'
+import DeletePopup from './delete-popup'
 
 export default function MainWallet() {
   const [wallet, setWallet] = useState<Keypair | null>(null)
+  const [showDelete, setShowDelete] = useState(false)
 
   useEffect(() => {
     const loaded = loadMainWallet()
@@ -46,6 +52,12 @@ export default function MainWallet() {
     URL.revokeObjectURL(url)
   }
 
+  function handleDelete() {
+    deleteMainWallet()
+    setWallet(null)
+    setShowDelete(false)
+  }
+
   return (
     <section className="p-4 space-y-4">
       <h1 className="text-xl font-bold">Main Wallet</h1>
@@ -55,7 +67,18 @@ export default function MainWallet() {
         <button onClick={handleExport} disabled={!wallet} className="px-4 py-2 bg-gray-200 rounded">Export</button>
       </div>
       {wallet && (
-        <p className="break-all">Address: {wallet.publicKey.toBase58()}</p>
+        <div className="space-y-2">
+          <p className="break-all">Address: {wallet.publicKey.toBase58()}</p>
+          <button
+            onClick={() => setShowDelete(true)}
+            className="px-4 py-2 bg-red-500 text-white rounded"
+          >
+            Delete Wallet
+          </button>
+        </div>
+      )}
+      {showDelete && (
+        <DeletePopup onConfirm={handleDelete} onCancel={() => setShowDelete(false)} />
       )}
     </section>
   )

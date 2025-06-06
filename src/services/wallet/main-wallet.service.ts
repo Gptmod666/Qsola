@@ -12,3 +12,7 @@ export function loadMainWallet(): Keypair | null {
   const secret = Uint8Array.from(JSON.parse(data))
   return Keypair.fromSecretKey(secret)
 }
+
+export function deleteMainWallet() {
+  localStorage.removeItem(KEY)
+}
