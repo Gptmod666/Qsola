@@ -18,9 +18,9 @@
 
 ## 🧰 Main Wallet (`mainwallet.tsx`)
 
-- [ ] Import JSON → écrit dans `mainwallet.json`
-- [ ] Export JSON
-- [ ] Delete wallet principal
+- [x] Import JSON → écrit dans `mainwallet.json`
+- [x] Export JSON
+- [x] Delete wallet principal
 - [ ] Solde auto-mis à jour (via WebSocket Helius)
 - [ ] Affichage SOL + conversion USD (`number-format.service.ts`)
 - [ ] Pop Up de confiramation → `send-popup.tsx`
