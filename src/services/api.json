@@ -1,0 +1,12 @@
+{
+  "helius": {
+    "http": "https://mainnet.helius-rpc.com/?api-key=9b44f73d-8343-42fe-8958-e16ea4c06753",
+    "ws": "wss://mainnet.helius-rpc.com/?api-key=9b44f73d-8343-42fe-8958-e16ea4c06753"
+  },
+  "gecko": {
+    "solUsd": "https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd&include_24hr_change=true"
+  },
+  "pumpfun": {
+    "trending": "https://client-api.pump.fun/trending"
+  }
+}
