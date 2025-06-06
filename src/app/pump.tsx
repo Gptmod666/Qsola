@@ -1,1 +1,3 @@
-import '../styles/globals.css'
+export default function Pump() {
+  return <div>Pump</div>
+}

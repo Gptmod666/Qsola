@@ -10,9 +10,9 @@
 
 ## 🧠 Architecture Générale
 
-- [ ] `layout.tsx` – structure de page globale avec `<Header />` et `<Tabs />`
-- [ ] `page.tsx` – SPA : routing des 4 tabs vers leurs composants
-- [ ] `header.tsx` – affiche le nombre total de wallets + soldes (SOL et USD)
+- [~] `layout.tsx` – structure de page globale avec `<Header />`
+- [~] `page.tsx` – SPA : routing des 4 tabs vers leurs composants
+- [~] `header.tsx` – affiche le nombre total de wallets + soldes (SOL et USD)
 
 ---
 
